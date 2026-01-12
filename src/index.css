@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 120 20% 98%;
+    --foreground: 140 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 140 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 30% 10%;
+
+    --primary: 142 60% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 120 15% 95%;
+    --secondary-foreground: 140 30% 10%;
+
+    --muted: 120 10% 93%;
+    --muted-foreground: 140 10% 45%;
+
+    --accent: 142 50% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 140 15% 88%;
+    --input: 140 15% 88%;
+    --ring: 142 60% 35%;
+
+    --radius: 0.5rem;
+
+    /* Department Colors - Agriculture Theme */
+    --sales: 199 89% 48%;
+    --manufacturing: 262 52% 50%;
+    --qc: 142 70% 40%;
+    --warehouse: 38 92% 50%;
+    --finance: 174 62% 40%;
+    --hr: 340 82% 52%;
+    --fieldops: 25 95% 53%;
+    --rnd: 200 70% 45%;
+
+    --sidebar-background: 142 45% 18%;
+    --sidebar-foreground: 120 20% 95%;
+    --sidebar-primary: 142 60% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 142 35% 25%;
+    --sidebar-accent-foreground: 120 20% 95%;
+    --sidebar-border: 142 30% 25%;
+    --sidebar-ring: 142 60% 50%;
+
+    /* Gradients - Agriculture Theme */
+    --gradient-primary: linear-gradient(135deg, hsl(142 60% 35%), hsl(142 60% 45%));
+    --gradient-accent: linear-gradient(135deg, hsl(142 50% 45%), hsl(142 50% 55%));
+    --gradient-sales: linear-gradient(135deg, hsl(199 89% 48%), hsl(199 89% 58%));
+    --gradient-manufacturing: linear-gradient(135deg, hsl(262 52% 50%), hsl(262 52% 60%));
+    --gradient-success: linear-gradient(135deg, hsl(142 70% 40%), hsl(142 70% 50%));
+    --gradient-warning: linear-gradient(135deg, hsl(38 92% 50%), hsl(38 92% 60%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
+    --shadow-card: 0 1px 3px hsl(222 47% 11% / 0.08), 0 1px 2px -1px hsl(222 47% 11% / 0.08);
+  }
+
+  .dark {
+    --background: 140 30% 6%;
+    --foreground: 120 20% 95%;
+
+    --card: 140 25% 10%;
+    --card-foreground: 120 20% 95%;
+
+    --popover: 140 25% 10%;
+    --popover-foreground: 120 20% 95%;
+
+    --primary: 142 60% 50%;
+    --primary-foreground: 140 30% 8%;
+
+    --secondary: 140 25% 15%;
+    --secondary-foreground: 120 20% 90%;
+
+    --muted: 140 20% 14%;
+    --muted-foreground: 140 10% 55%;
+
+    --accent: 142 50% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 60% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 82% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 199 79% 53%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 140 20% 20%;
+    --input: 140 20% 20%;
+    --ring: 142 60% 50%;
+
+    --sidebar-background: 142 45% 8%;
+    --sidebar-foreground: 120 20% 85%;
+    --sidebar-accent: 142 35% 15%;
+    --sidebar-border: 142 30% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .kpi-card {
+    @apply bg-card rounded-xl p-5 shadow-sm border border-border/50 transition-all duration-200 hover:shadow-md;
+  }
+
+  .dashboard-section {
+    @apply bg-card rounded-xl p-6 shadow-sm border border-border/50;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .table-header {
+    @apply bg-muted/50 text-muted-foreground text-xs font-semibold uppercase tracking-wider;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 0; }
+    100% { transform: scale(0.8); opacity: 0; }
+  }
+
+  .pulse-ring {
+    animation: pulse-ring 2s ease-out infinite;
+  }
+}
